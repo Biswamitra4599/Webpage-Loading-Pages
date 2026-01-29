@@ -1,17 +1,3 @@
-// import Spinner from "./spinner/Spinner.loader";
-// import SpinnerPreview from "./spinner/Spinner.preview";
-
-// export const loaderRegistry = [
-//   {
-//     id: "spinner",
-//     name: "Spinner",
-//     description: "Classic rotating loader",
-//     category: "minimal",
-//     Loader: Spinner,
-//     Preview: SpinnerPreview,
-//   },
-// ];
-
 import Spinner from "./spinner/Spinner.loader";
 import SpinnerPreview from "./spinner/Spinner.preview";
 
@@ -26,6 +12,11 @@ export const loaderRegistry = [
     category: "minimal",
     Loader: Spinner,
     Preview: SpinnerPreview,
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
   },
   {
     id: "dots",
@@ -34,5 +25,10 @@ export const loaderRegistry = [
     category: "minimal",
     Loader: Dots,
     Preview: DotsPreview,
+    controls: {
+      size: true,
+      speed: false,
+      color: true,
+    },
   },
 ];
