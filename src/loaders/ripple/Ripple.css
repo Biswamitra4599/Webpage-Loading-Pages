@@ -1,0 +1,33 @@
+.ripple {
+  position: relative;
+  width: var(--ripple-size);
+  height: var(--ripple-size);
+}
+
+.ripple span {
+  position: absolute;
+  border: 4px solid var(--ripple-color);
+  border-radius: 50%;
+  animation: ripple var(--ripple-speed) infinite ease-out;
+}
+
+.ripple span:nth-child(2) {
+  animation-delay: calc(var(--ripple-speed) / 2);
+}
+
+@keyframes ripple {
+  0% {
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 0.8;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}

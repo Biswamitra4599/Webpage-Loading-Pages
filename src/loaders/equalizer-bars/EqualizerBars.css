@@ -1,0 +1,26 @@
+.equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(var(--bar-width) / 2);
+  height: var(--bar-height);
+}
+
+.equalizer span {
+  width: var(--bar-width);
+  height: 20%;
+  background: var(--bar-color);
+  border-radius: 4px;
+  animation: equalize var(--bar-speed) infinite ease-in-out;
+}
+
+.equalizer span:nth-child(1) { animation-delay: 0s; }
+.equalizer span:nth-child(2) { animation-delay: 0.1s; }
+.equalizer span:nth-child(3) { animation-delay: 0.2s; }
+.equalizer span:nth-child(4) { animation-delay: 0.3s; }
+.equalizer span:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes equalize {
+  0%   { height: 20%; }
+  50%  { height: 100%; }
+  100% { height: 30%; }
+}

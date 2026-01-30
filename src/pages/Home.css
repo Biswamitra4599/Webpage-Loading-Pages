@@ -1,0 +1,14 @@
+/* Loader card on home page */
+.loader-card {
+  position: relative;
+  overflow: hidden;   /* 🔥 THIS fixes dots escaping */
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.loader-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}

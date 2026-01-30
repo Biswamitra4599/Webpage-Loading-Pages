@@ -1,0 +1,26 @@
+.loader-card {
+  position: relative;
+  overflow: hidden;        /* 🔥 prevents dots escaping */
+  border-radius: 16px;
+  padding: 1.5rem;
+  background: linear-gradient(145deg, #1aa89c, #128c83);
+  color: #000;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.loader-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.loader-preview {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* NEW */
+  position: relative;
+}
