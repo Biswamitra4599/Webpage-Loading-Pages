@@ -1,0 +1,10 @@
+:: Child Node ::
+
+[ Global Header (sticky) ]
+--------------------------------
+[ PageContainer ]
+   [ Loader Toolbar ]
+   ----------------------------
+   [ Loader Preview | Controls ]
+--------------------------------
+[ Footer ]

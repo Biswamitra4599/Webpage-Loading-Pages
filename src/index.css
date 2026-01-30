@@ -2,33 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #1e1e1e;
+  color: rgba(255, 255, 255, 0.92);
+  background-color: #0e1625;
+
+  --blue-primary: #476eae;
+  --teal-secondary: #48b3af;
+  --green-soft: #a7e399;
+  --yellow-accent: #f6ff99;
+
+  --shadow-color: rgba(0, 0, 0, 0.25);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --primary-color: #646cff;
-  --primary-hover: #535bf2;
-  --accent-color: #22ecdc;
-  --shadow-color: rgba(0, 0, 0, 0.25);
 }
 
+
+
 body {
-  font-family: inherit;
   margin: 0;
-  background: linear-gradient(135deg, #22ecdc 0%, #1a1a1a 100%);
+  font-family: inherit;
+  background: linear-gradient(
+    135deg,
+    #476eae 0%,
+    #48b3af 35%,
+    #0e1625 85%
+  );
   color: rgba(255, 255, 255, 0.9);
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.4s ease, color 0.3s ease;
 }
 
 h1 {
@@ -36,65 +44,83 @@ h1 {
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: -1px;
-  text-shadow: 1px 1px 3px var(--shadow-color);
+  color: var(--yellow-accent);
+  text-shadow: 0 2px 12px rgba(246, 255, 153, 0.25);
   margin-bottom: 0.5em;
 }
 
 a {
   font-weight: 500;
-  color: var(--primary-color);
+  color: var(--teal-secondary);
   text-decoration: none;
-  transition: color 0.3s, transform 0.2s;
+  transition: color 0.25s ease, transform 0.2s ease;
 }
+
 a:hover {
-  color: var(--primary-hover);
-  transform: scale(1.05);
+  color: var(--green-soft);
+  transform: translateY(-1px);
 }
 
 button {
-  border-radius: 12px;
+  border-radius: 14px;
   border: 1px solid transparent;
   padding: 0.75em 1.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background: linear-gradient(135deg, #646cff, #535bf2);
-  color: #fff;
+
+  background: linear-gradient(
+    135deg,
+    var(--blue-primary),
+    var(--teal-secondary)
+  );
+
+  color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px var(--shadow-color);
-}
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px var(--shadow-color);
-  border-color: var(--primary-color);
-}
-button:focus,
-button:focus-visible {
-  outline: 3px solid var(--primary-color);
-  outline-offset: 2px;
+
+  box-shadow: 0 6px 20px var(--shadow-color);
 }
 
+button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 30px rgba(72, 179, 175, 0.35),
+    0 0 12px rgba(167, 227, 153, 0.25);
+  border-color: var(--green-soft);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--yellow-accent);
+  outline-offset: 3px;
+}
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #f6f8fb;
     --shadow-color: rgba(0, 0, 0, 0.1);
   }
+
   body {
-    background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
+    background: linear-gradient(
+      135deg,
+      #f6ff99 0%,
+      #a7e399 40%,
+      #ffffff 100%
+    );
     color: #213547;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background: linear-gradient(135deg, #646cff, #535bf2);
-    color: #fff;
-  }
-}
-@media (max-width: 600px) {
+
   h1 {
-    font-size: 2.25em;
+    color: #476eae;
+    text-shadow: none;
   }
 }

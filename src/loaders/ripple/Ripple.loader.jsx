@@ -1,6 +1,6 @@
 import "./Ripple.css";
 
-export default function Ripple({ size = 60, speed = 1.2, color = "#111" }) {
+export default function Ripple({ size = 48, color = "#111", speed = 1.2 }) {
   return (
     <div
       className="ripple"

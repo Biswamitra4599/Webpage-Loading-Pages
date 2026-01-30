@@ -22,11 +22,17 @@ export default function LoaderPage() {
   const LoaderComponent = loader.Loader;
 
   return (
-    <>
-      {/* Header */}
+    <div className="loader-page-wrapper">
+      {/* Page toolbar */}
       <div className="loader-header">
-        <Link to="/">← Back</Link>
-        <strong>{loader.name}</strong>
+        <Link to="/" className="back-link">
+          ← Back
+        </Link>
+
+        <div className="page-title">
+          <span className="page-eyebrow">Loader Styles in Work</span>
+          <h1>{loader.name}</h1>
+        </div>
 
         <button
           className="controls-btn"
@@ -36,31 +42,59 @@ export default function LoaderPage() {
         </button>
       </div>
 
+      {/* Main body */}
       <div className="loader-page">
-        {/* Preview */}
         <div className="loader-preview">
           <div className="preview-card">
             <LoaderComponent size={size} speed={speed} color={color} />
           </div>
         </div>
+        <div className="loader-writeup">
+          <p className="loader-intro">{loader.writeup.intro}</p>
 
-        {/* Controls */}
+          <div className="writeup-grid">
+            <div>
+              <h4>Use cases</h4>
+              <ul>
+                {loader.writeup.useCases.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4>Advantages</h4>
+              <ul>
+                {loader.writeup.advantages.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4>Limitations</h4>
+              <ul>
+                {loader.writeup.limitations.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <div className={`controls-panel ${showControls ? "" : "hidden"}`}>
           <h3>Customize</h3>
-
           {loader.controls?.size && (
             <SizeControl value={size} onChange={setSize} />
           )}
-
           {loader.controls?.speed && (
             <SpeedControl value={speed} onChange={setSpeed} />
           )}
-
           {loader.controls?.color && (
             <ColorControl value={color} onChange={setColor} />
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

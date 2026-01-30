@@ -1,21 +1,15 @@
 import { loaderRegistry } from "../loaders/registry";
 import LoaderCard from "../components/LoaderCard";
+import PageContainer from "../components/layout/PageContainer";
 import "./Home.css";
 
 export default function Home() {
   return (
-    <div style={{ padding: "2rem" }}>
+    <PageContainer>
       <h1>Loading Animations</h1>
       <p>Select a loader to customize and preview</p>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-          gap: "1.5rem",
-          marginTop: "2rem",
-        }}
-      >
+      <div className="loader-grid">
         {loaderRegistry.map((loader) => {
           const PreviewLoader = loader.Loader;
 
@@ -31,6 +25,6 @@ export default function Home() {
           );
         })}
       </div>
-    </div>
+    </PageContainer>
   );
 }
