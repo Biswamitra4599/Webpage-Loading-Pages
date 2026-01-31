@@ -1,40 +1,58 @@
-import { useParams } from "react-router-dom";
-import { loaderRegistry } from "../loaders/registry";
-import LoaderCard from "../components/LoaderCard";
+import { Link, useParams } from "react-router-dom";
+import { getLoadersByCategory } from "../utils/getLoadersByCategory";
 
 export default function CategoryPage() {
   const { categoryId } = useParams();
+  const filteredLoaders = getLoadersByCategory(categoryId);
 
-  const loaders = loaderRegistry.filter(
-    (loader) => loader.category === categoryId,
-  );
+  if (!filteredLoaders.length)
+    return <p>No loaders found for this category.</p>;
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h1>{categoryId} loaders</h1>
-
-      {loaders.length === 0 && <p>No loaders found for this category.</p>}
+      <h1>
+        {categoryId.charAt(0).toUpperCase() + categoryId.slice(1)} Loaders
+      </h1>
 
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+          display: "flex",
           gap: "1.5rem",
-          marginTop: "2rem",
+          flexWrap: "wrap",
+          justifyContent: "flex-start",
+          paddingTop: "1rem",
         }}
       >
-        {loaders.map((loader) => {
-          const Preview = loader.Loader;
-
+        {filteredLoaders.map((loader) => {
+          const PreviewComponent = loader.Preview;
           return (
-            <LoaderCard
+            <div
               key={loader.id}
-              id={loader.id}
-              name={loader.name}
-              description={loader.description}
+              style={{
+                border: "1px solid #ccc",
+                borderRadius: "12px",
+                padding: "1rem",
+                width: "160px",
+                textAlign: "center",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                backgroundColor: "#fff",
+                cursor: "pointer",
+                transition: "box-shadow 0.3s ease",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
             >
-              <Preview size={32} speed={1} color="#555" />
-            </LoaderCard>
+              <Link
+                to={`/loader/${loader.id}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <PreviewComponent size={60} />
+                <p style={{ marginTop: "0.5rem", fontWeight: "bold" }}>
+                  {loader.name}
+                </p>
+              </Link>
+            </div>
           );
         })}
       </div>

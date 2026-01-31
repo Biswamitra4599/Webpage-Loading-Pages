@@ -1,5 +1,9 @@
-import { loaderRegistry } from "../loaders/registry";
+import { loaderRegistry } from "../loaders/registry.js";
 
 export function getLoadersByCategory(categoryId) {
-  return loaderRegistry.filter((loader) => loader.category === categoryId);
+  if (categoryId === "all") return loaderRegistry;
+
+  return loaderRegistry.filter((loader) =>
+    loader.categories?.includes(categoryId),
+  );
 }

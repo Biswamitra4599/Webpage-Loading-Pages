@@ -19,20 +19,13 @@ import StrokeRingPreview from "./stroke-ring/StrokeRing.preview";
 import PulsingDots from "./pulsing-dots/PulsingDots.loader";
 import PulsingDotsPreview from "./pulsing-dots/PulsingDots.preview";
 
-// import BouncingDots from "./bouncing-dots/BouncingDots";
-
-
-// import StrokeRing from "./stroke-ring/StrokeRing";
-
-// import PulsingDots from "./pulsing-dots/PulsingDots";
-// import PulsingDots from "./pulsing-dots/PulsingDots.loader";
 
 export const loaderRegistry = [
   {
     id: "spinner",
     name: "Spinner / Circular Loader",
     description: "A classic rotating circular loader.",
-    category: "minimal",
+    categories: ["rings", "minimal", "chat"],
     Loader: Spinner,
     Preview: SpinnerPreview,
 
@@ -64,7 +57,7 @@ export const loaderRegistry = [
     id: "dots",
     name: "Dots Loader",
     description: "Three animated dots indicating activity.",
-    category: "minimal",
+    categories: ["dots", "minimal", "chat"],
     Loader: Dots,
     Preview: DotsPreview,
 
@@ -97,7 +90,7 @@ export const loaderRegistry = [
     name: "Bouncing Dots",
     description:
       "Three dots bouncing in sequence to indicate ongoing activity.",
-    category: "dots",
+    categories: ["dots", "minimal", "chat"],
 
     Loader: BouncingDots,
     Preview: BouncingDotsPreview,
@@ -135,7 +128,7 @@ export const loaderRegistry = [
     id: "equalizer-bars",
     name: "Equalizer Bars",
     description: "Animated audio-style bars that rise and fall in sequence.",
-    category: "bars",
+    categories: ["bars", "minimal", "audio"],
 
     Loader: EqualizerBars,
     Preview: EqualizerBarsPreview,
@@ -160,7 +153,6 @@ export const loaderRegistry = [
         "Does not convey progress or duration",
       ],
     },
-
     controls: {
       size: true,
       speed: true,
@@ -172,7 +164,7 @@ export const loaderRegistry = [
     id: "ripple",
     name: "Ripple",
     description: "Expanding circular waves radiating outward.",
-    category: "rings",
+    categories: ["rings", "minimal", "chat"],
 
     Loader: Ripple,
     Preview: RipplePreview,
@@ -209,7 +201,7 @@ export const loaderRegistry = [
     id: "stroke-ring",
     name: "Stroke Ring",
     description: "Minimal circular spinner using CSS stroke animation.",
-    category: "rings",
+    categories: ["rings", "minimal", "chat"],
 
     Loader: StrokeRing,
     Preview: StrokeRingPreview,
@@ -247,7 +239,7 @@ export const loaderRegistry = [
     id: "pulsing-dots",
     name: "Pulsing Dots",
     description: "Soft, rhythmic dot pulses to indicate ongoing activity.",
-    category: "dots",
+    categories: ["dots", "minimal", "chat"],
 
     Loader: PulsingDots,
     Preview: PulsingDotsPreview,
