@@ -16,8 +16,8 @@ import RipplePreview from "./ripple/Ripple.preview";
 import StrokeRing from "./stroke-ring/StrokeRing.loader";
 import StrokeRingPreview from "./stroke-ring/StrokeRing.preview";
 
-// import PulsingDots from "./pulsing-dots/PulsingDots.loader";
-// import PulsingDotsPreview from "./pulsing-dots/PulsingDots.preview";
+import PulsingDots from "./pulsing-dots/PulsingDots.loader";
+import PulsingDotsPreview from "./pulsing-dots/PulsingDots.preview";
 
 // import BouncingDots from "./bouncing-dots/BouncingDots";
 
@@ -25,7 +25,7 @@ import StrokeRingPreview from "./stroke-ring/StrokeRing.preview";
 // import StrokeRing from "./stroke-ring/StrokeRing";
 
 // import PulsingDots from "./pulsing-dots/PulsingDots";
-import PulsingDots from "./pulsing-dots/PulsingDotsLoader";
+// import PulsingDots from "./pulsing-dots/PulsingDots.loader";
 
 export const loaderRegistry = [
   {
@@ -233,6 +233,40 @@ export const loaderRegistry = [
       limitations: [
         "Less expressive than complex animations",
         "May feel generic if overused",
+      ],
+    },
+
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
+  },
+
+  {
+    id: "pulsing-dots",
+    name: "Pulsing Dots",
+    description: "Soft, rhythmic dot pulses to indicate ongoing activity.",
+    category: "dots",
+
+    Loader: PulsingDots,
+    Preview: PulsingDotsPreview,
+
+    writeup: {
+      intro:
+        "The pulsing dots loader animates dots with a gentle scaling or opacity change. It creates a calm and subtle loading experience, ideal for non-intrusive feedback.",
+
+      useCases: [
+        "Messaging and chat interfaces",
+        "Lightweight background operations",
+        "Friendly or informal applications",
+      ],
+
+      advantages: ["Soft and unobtrusive", "Feels friendly and approachable"],
+
+      limitations: [
+        "Not suitable for long waits",
+        "No indication of progress or completion time",
       ],
     },
 
