@@ -1,0 +1,169 @@
+🔹 1. Minimal & Classic Loaders
+
+Clean, fast, universal.
+
+Rotating spinner
+
+Dual-ring spinner
+
+Pulsing circle
+
+Three bouncing dots
+
+Dots morphing into a line
+
+Thin linear progress bar
+
+Indeterminate bar (Material style)
+
+🔹 2. Skeleton & Content-Aware Loaders (🔥 Must-have)
+
+Modern apps love these.
+
+Card skeleton shimmer
+
+List item skeleton
+
+Avatar + text skeleton
+
+Image placeholder blur
+
+Chart skeleton
+
+Table row skeleton
+
+Form field skeleton
+
+🔹 3. Text-Based Loaders
+
+Simple but expressive.
+
+“Loading…” typing animation
+
+Scrambling letters loader
+
+Dots added after text
+
+Rotating words (Loading → Fetching → Almost there)
+
+Blinking cursor terminal loader
+
+Code compilation text animation
+
+🔹 4. Progress & Data Loaders
+
+Great for dashboards, ML, uploads.
+
+Circular progress ring
+
+Radial fill loader
+
+Step-based progress tracker
+
+Percentage counter loader
+
+Wave filling container
+
+Battery-style fill loader
+
+Speedometer loader
+
+🔹 5. Creative & Branded Loaders (Portfolio Gold ✨)
+
+These stand out visually.
+
+Logo morph animation
+
+Logo drawing itself (SVG stroke)
+
+Shape morphing (circle → square)
+
+DNA helix spinner
+
+Particle swarm converging
+
+Neon glow pulse loader
+
+Isometric cube rotation
+
+3D card flip loader
+
+🔹 6. Micro-Interaction Loaders
+
+Small, delightful, UX magic.
+
+Button loading spinner
+
+Icon transforming into loader
+
+Hover-triggered mini loader
+
+Pull-to-refresh animation
+
+Swipe loader transition
+
+🔹 7. Full-Screen Page Loaders
+
+For first impressions.
+
+Page reveal curtain
+
+Gradient wave background
+
+Animated background mesh
+
+Zoom-in brand loader
+
+Blur → focus page transition
+
+🔹 8. Fun & Themed Loaders 😄
+
+Great for playful apps.
+
+Coffee cup filling
+
+Rocket launch loader
+
+Running character
+
+Heartbeat pulse
+
+Pixelated retro loader
+
+Loading map / path trace
+
+Spinner made of emojis
+
+🔹 9. Tech / Developer-Style Loaders
+
+Perfect for your profile 👀
+
+Terminal logs scrolling
+
+Binary stream animation
+
+Matrix rain loader
+
+Neural network activation
+
+Training epoch progress
+
+Compiling nodes graph
+
+API request timeline
+
+🔹 10. Advanced / Experimental Loaders
+
+If you want to flex 💪
+
+Physics-based spring loader
+
+Audio-reactive loader
+
+Cursor-following loader
+
+Scroll-progress loader
+
+WebGL shader loader
+
+Noise-based distortion loader

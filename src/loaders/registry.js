@@ -20,7 +20,26 @@ import PulsingDots from "./pulsing-dots/PulsingDots.loader";
 import PulsingDotsPreview from "./pulsing-dots/PulsingDots.preview";
 
 
+import LinearProgress from "./linear-progress/LinearProgress.loader";
+import LinearProgressPreview from "./linear-progress/LinearProgress.preview";
+
+import CircularProgress from "./circular-progress/CircularProgress.loader";
+import CircularProgressPreview from "./circular-progress/CircularProgress.preview";
+
+import ShimmerSkeleton from "./shimmer-skeleton/ShimmerSkeleton.loader";
+import ShimmerSkeletonPreview from "./shimmer-skeleton/ShimmerSkeleton.preview";
+
+import Wave from "./wave/Wave.loader";
+import WavePreview from "./wave/Wave.preview";
+
+// import OrbitingDots from "./orbiting-dots/OrbitingDots.loader";
+// import OrbitingDotsPreview from "./orbiting-dots/OrbitingDots.preview";
+
+// import PulseRings from "./pulse-rings/PulseRings.loader";
+// import PulseRingsPreview from "./pulse-rings/PulseRings.preview";
+
 export const loaderRegistry = [
+  // Spinner and Dots are the most basic, so we can keep them at the top for easy access
   {
     id: "spinner",
     name: "Spinner / Circular Loader",
@@ -268,4 +287,266 @@ export const loaderRegistry = [
       color: true,
     },
   },
+    {
+    id: "linear-progress",
+    name: "Linear Progress",
+    description: "Smooth horizontal bar with shimmer effect.",
+    categories: ["progress", "modern", "minimal"],
+
+    Loader: LinearProgress,
+    Preview: LinearProgressPreview,
+
+    writeup: {
+      intro:
+        "A modern linear progress bar with a smooth shimmer animation. It gives users a clear sense of ongoing activity with a sleek, contemporary feel.",
+
+      useCases: [
+        "File uploads",
+        "Page loading",
+        "Form submissions",
+        "Long-running processes",
+      ],
+
+      advantages: [
+        "Shows continuous activity clearly",
+        "Familiar and intuitive",
+        "Highly customizable",
+      ],
+
+      limitations: [
+        "Does not show exact percentage unless enhanced",
+        "Can feel generic if overused",
+      ],
+    },
+
+    controls: {
+      height: true,
+      speed: true,
+      color: true,
+    },
+  },
+
+  {
+    id: "circular-progress",
+    name: "Circular Progress",
+    description: "SVG-based circular loader with smooth animation.",
+    categories: ["rings", "progress", "modern"],
+
+    Loader: CircularProgress,
+    Preview: CircularProgressPreview,
+
+    writeup: {
+      intro:
+        "A clean, scalable circular progress loader built with SVG. It provides a premium feel and works beautifully at any size.",
+
+      useCases: [
+        "Dashboard widgets",
+        "Profile updates",
+        "Data processing",
+      ],
+
+      advantages: [
+        "Scales perfectly at any resolution",
+        "Can show progress percentage",
+        "Modern and professional appearance",
+      ],
+
+      limitations: [
+        "Slightly more complex than basic spinners",
+        "May need extra logic for real progress tracking",
+      ],
+    },
+
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
+  },
+
+  {
+    id: "shimmer-skeleton",
+    name: "Shimmer Skeleton",
+    description: "Skeleton loading card with shimmer effect.",
+    categories: ["skeleton", "modern", "ui"],
+
+    Loader: ShimmerSkeleton,
+    Preview: ShimmerSkeletonPreview,
+
+    writeup: {
+      intro:
+        "A realistic content placeholder with animated shimmer. This is the industry standard for loading states in content-heavy applications.",
+
+      useCases: [
+        "Card layouts",
+        "List views",
+        "Profile pages",
+        "Data tables",
+      ],
+
+      advantages: [
+        "Excellent user experience during loading",
+        "Reduces perceived loading time",
+        "Highly realistic",
+      ],
+
+      limitations: [
+        "Takes more space than simple loaders",
+        "Best used with actual content structure",
+      ],
+    },
+
+    controls: {
+      // Usually no controls needed, or you can add theme later
+    },
+  },
+
+  // Wave
+  {
+    id: "wave",
+    name: "Wave Loader",
+    description: "Animated wavy line resembling sound or signal waves.",
+    categories: ["wave", "modern", "bars"],
+
+    Loader: Wave,
+    Preview: WavePreview,
+
+    writeup: {
+      intro:
+        "A dynamic wave animation that flows smoothly. It creates a sense of movement and fluidity, perfect for modern interfaces.",
+
+      useCases: [
+        "Processing data",
+        "Streaming content",
+        "Audio-related UIs",
+      ],
+
+      advantages: [
+        "Very visually appealing",
+        "Unique and memorable",
+        "Calming motion",
+      ],
+
+      limitations: [
+        "Slightly more distracting than minimal loaders",
+      ],
+    },
+
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
+  },
+
+  // {
+  //   id: "orbiting-dots",
+  //   name: "Orbiting Dots",
+  //   description: "Central dot with orbiting dots around it.",
+  //   categories: ["dots", "modern", "premium"],
+
+  //   Loader: OrbitingDots,
+  //   Preview: OrbitingDotsPreview,
+
+  //   writeup: {
+  //     intro:
+  //       "Elegant loader featuring a central point with dots orbiting around it. Creates a sophisticated and premium loading experience.",
+
+  //     useCases: [
+  //       "Premium applications",
+  //       "AI tools",
+  //       "Creative portfolios",
+  //     ],
+
+  //     advantages: [
+  //       "Eye-catching and unique",
+  //       "Modern and futuristic feel",
+  //     ],
+
+  //     limitations: [
+  //       "Slightly more complex animation",
+  //       "May not suit very minimal designs",
+  //     ],
+  //   },
+
+  //   controls: {
+  //     size: true,
+  //     speed: true,
+  //     color: true,
+  //   },
+  // },
+
+  // {
+  //   id: "pulse-rings",
+  //   name: "Pulse Rings",
+  //   description: "Multiple concentric rings pulsing outward.",
+  //   categories: ["rings", "modern", "minimal"],
+
+  //   Loader: PulseRings,
+  //   Preview: PulseRingsPreview,
+
+  //   writeup: {
+  //     intro:
+  //       "Multiple expanding rings that pulse outward, creating a radar-like or breathing effect. Very smooth and calming.",
+
+  //     useCases: [
+  //       "Scanning / searching",
+  //       "Syncing",
+  //       "Background activity",
+  //     ],
+
+  //     advantages: [
+  //       "Beautiful and elegant",
+  //       "Very smooth performance",
+  //     ],
+
+  //     limitations: ["Can be subtle on small screens"],
+  //   },
+
+  //   controls: {
+  //     size: true,
+  //     speed: true,
+  //     color: true,
+  //   },
+  // },
+
+  // {
+  //   id: "linear-progress",
+  //   name: "Linear Progress",
+  //   description: "Smooth horizontal bar with shimmer effect.",
+  //   categories: ["progress", "modern", "minimal"],
+
+  //   Loader: LinearProgress,
+  //   Preview: LinearProgressPreview,
+
+  //   writeup: {
+  //     intro:
+  //       "A modern linear progress bar with a smooth shimmer animation. It gives users a clear sense of ongoing activity with a sleek, contemporary feel.",
+
+  //     useCases: [
+  //       "File uploads",
+  //       "Page loading",
+  //       "Form submissions",
+  //       "Long-running processes",
+  //     ],
+
+  //     advantages: [
+  //       "Shows continuous activity clearly",
+  //       "Familiar and intuitive",
+  //       "Highly customizable",
+  //     ],
+
+  //     limitations: [
+  //       "Does not show exact percentage unless enhanced",
+  //       "Can feel generic if overused",
+  //     ],
+  //   },
+
+  //   controls: {
+  //     height: true,
+  //     speed: true,
+  //     color: true,
+  //   },
+  // },
+
 ];

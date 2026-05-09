@@ -1,0 +1,67 @@
+.shimmer-skeleton {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Shimmer Animation Overlay */
+.shimmer-skeleton::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0.7),
+    rgba(255,255,255,0)
+  );
+  animation: shimmer 1.8s infinite linear;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-150%); }
+  100% { transform: translateX(400%); }
+}
+
+/* Placeholder Elements */
+.shimmer-image {
+  width: 100%;
+  height: 110px;
+  background: #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.shimmer-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shimmer-line {
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  animation: pulse 1.6s infinite ease-in-out;
+}
+
+.shimmer-line.title {
+  height: 18px;
+  width: 75%;
+}
+
+.shimmer-line.short {
+  width: 45%;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
