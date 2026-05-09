@@ -1,0 +1,30 @@
+.pulse-rings {
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulse-ring {
+  position: absolute;
+  border: 3px solid var(--color);
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse-ring-animation var(--speed) ease-out infinite;
+}
+
+@keyframes pulse-ring-animation {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}

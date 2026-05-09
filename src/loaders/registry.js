@@ -32,11 +32,31 @@ import ShimmerSkeletonPreview from "./shimmer-skeleton/ShimmerSkeleton.preview";
 import Wave from "./wave/Wave.loader";
 import WavePreview from "./wave/Wave.preview";
 
-// import OrbitingDots from "./orbiting-dots/OrbitingDots.loader";
-// import OrbitingDotsPreview from "./orbiting-dots/OrbitingDots.preview";
+import OrbitingDots from "./orbiting-dots/OrbitingDots.loader";
+import OrbitingDotsPreview from "./orbiting-dots/OrbitingDots.preview";
 
-// import PulseRings from "./pulse-rings/PulseRings.loader";
-// import PulseRingsPreview from "./pulse-rings/PulseRings.preview";
+import PulseRings from "./pulse-rings/PulseRings.loader";
+import PulseRingsPreview from "./pulse-rings/PulseRings.preview";
+
+import StripedBar from "./striped-bar/StripedBar.loader";
+import StripedBarPreview from "./striped-bar/StripedBar.preview";
+
+import TypingDots from "./typing-dots/TypingDots.loader";
+import TypingDotsPreview from "./typing-dots/TypingDots.preview";
+
+import FlipCard from "./flip-card/FlipCard.loader";
+import FlipCardPreview from "./flip-card/FlipCard.preview";
+
+import CubeSpinner from "./cube-spinner/CubeSpinner.loader";
+import CubeSpinnerPreview from "./cube-spinner/CubeSpinner.preview";
+
+import GearLoader from "./gear-loader/GearLoader.loader";
+import GearLoaderPreview from "./gear-loader/GearLoader.preview";
+
+import Hourglass from "./hourglass/Hourglass.loader";
+import HourglassPreview from "./hourglass/Hourglass.preview";
+
+
 
 export const loaderRegistry = [
   // Spinner and Dots are the most basic, so we can keep them at the top for easy access
@@ -216,6 +236,7 @@ export const loaderRegistry = [
     },
   },
 
+  // Stroker Ring is a more refined and modern take on the classic spinner, using SVG stroke animation for a crisp and scalable effect. It is ideal for professional dashboards and interfaces where a clean, minimal loading indicator is desired.
   {
     id: "stroke-ring",
     name: "Stroke Ring",
@@ -254,6 +275,7 @@ export const loaderRegistry = [
     },
   },
 
+  // Pulsing Dots is a gentle, rhythmic animation where dots softly scale or change opacity in a loop. It creates a calm and subtle loading experience, ideal for non-intrusive feedback in chat interfaces or friendly applications. The smooth pulsing motion conveys ongoing activity without being distracting, making it perfect for short waits or background tasks.
   {
     id: "pulsing-dots",
     name: "Pulsing Dots",
@@ -287,7 +309,9 @@ export const loaderRegistry = [
       color: true,
     },
   },
-    {
+
+  // Linear Progress is a modern take on the traditional progress bar, featuring a smooth shimmer animation that continuously flows across the bar. It provides a sleek and contemporary feel while giving users a clear sense of ongoing activity. This loader is ideal for file uploads, page loading, form submissions, and any long-running processes where you want to indicate that something is happening without showing exact progress. The shimmer effect adds visual interest and can be customized in terms of height, speed, and color to fit seamlessly into various design systems.
+  {
     id: "linear-progress",
     name: "Linear Progress",
     description: "Smooth horizontal bar with shimmer effect.",
@@ -326,6 +350,7 @@ export const loaderRegistry = [
     },
   },
 
+  // Circular Progress is a clean, scalable circular progress loader built with SVG. It provides a premium feel and works beautifully at any size. This loader is ideal for dashboard widgets, profile updates, and data processing tasks where you want to indicate that something is happening without showing exact progress. The smooth animation creates a modern and professional appearance, while the ability to show progress percentage can enhance user feedback. However, it may require extra logic for real progress tracking and can be slightly more complex than basic spinners.
   {
     id: "circular-progress",
     name: "Circular Progress",
@@ -339,11 +364,7 @@ export const loaderRegistry = [
       intro:
         "A clean, scalable circular progress loader built with SVG. It provides a premium feel and works beautifully at any size.",
 
-      useCases: [
-        "Dashboard widgets",
-        "Profile updates",
-        "Data processing",
-      ],
+      useCases: ["Dashboard widgets", "Profile updates", "Data processing"],
 
       advantages: [
         "Scales perfectly at any resolution",
@@ -364,6 +385,7 @@ export const loaderRegistry = [
     },
   },
 
+  // Shimmer Skeleton is a realistic content placeholder that uses an animated shimmer effect to indicate loading. It is the industry standard for loading states in content-heavy applications, providing users with a clear sense of what is being loaded while reducing perceived waiting time. This loader is ideal for card layouts, list views, profile pages, and data tables where you want to maintain the structure of the content while it loads. The shimmer animation creates a visually engaging experience, but it takes more space than simple loaders and works best when used with actual content structure.
   {
     id: "shimmer-skeleton",
     name: "Shimmer Skeleton",
@@ -377,12 +399,7 @@ export const loaderRegistry = [
       intro:
         "A realistic content placeholder with animated shimmer. This is the industry standard for loading states in content-heavy applications.",
 
-      useCases: [
-        "Card layouts",
-        "List views",
-        "Profile pages",
-        "Data tables",
-      ],
+      useCases: ["Card layouts", "List views", "Profile pages", "Data tables"],
 
       advantages: [
         "Excellent user experience during loading",
@@ -401,7 +418,7 @@ export const loaderRegistry = [
     },
   },
 
-  // Wave
+  // Wave is a dynamic wave animation that flows smoothly. It creates a sense of movement and fluidity, perfect for modern interfaces. This loader is ideal for processing data, streaming content, or audio-related UIs where you want to convey ongoing activity with a visually appealing and unique animation. The calming motion of the waves can enhance user experience, but it may be slightly more distracting than minimal loaders in very simple interfaces.
   {
     id: "wave",
     name: "Wave Loader",
@@ -415,11 +432,7 @@ export const loaderRegistry = [
       intro:
         "A dynamic wave animation that flows smoothly. It creates a sense of movement and fluidity, perfect for modern interfaces.",
 
-      useCases: [
-        "Processing data",
-        "Streaming content",
-        "Audio-related UIs",
-      ],
+      useCases: ["Processing data", "Streaming content", "Audio-related UIs"],
 
       advantages: [
         "Very visually appealing",
@@ -427,8 +440,37 @@ export const loaderRegistry = [
         "Calming motion",
       ],
 
+      limitations: ["Slightly more distracting than minimal loaders"],
+    },
+
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
+  },
+
+  // Orbiting Dots is an elegant loader featuring a central point with dots orbiting around it. It creates a sophisticated and premium loading experience, ideal for applications that want to convey a sense of creativity and modernity. This loader works well in AI tools, creative portfolios, and premium applications where you want to impress users with a unique animation. However, it may be slightly more complex than basic loaders and may not suit very minimal designs.
+  {
+    id: "orbiting-dots",
+    name: "Orbiting Dots",
+    description: "Central dot with orbiting dots around it.",
+    categories: ["dots", "modern", "premium"],
+
+    Loader: OrbitingDots,
+    Preview: OrbitingDotsPreview,
+
+    writeup: {
+      intro:
+        "Elegant loader featuring a central point with dots orbiting around it. Creates a sophisticated and premium loading experience.",
+
+      useCases: ["Premium applications", "AI tools", "Creative portfolios"],
+
+      advantages: ["Eye-catching and unique", "Modern and futuristic feel"],
+
       limitations: [
-        "Slightly more distracting than minimal loaders",
+        "Slightly more complex animation",
+        "May not suit very minimal designs",
       ],
     },
 
@@ -439,114 +481,269 @@ export const loaderRegistry = [
     },
   },
 
-  // {
-  //   id: "orbiting-dots",
-  //   name: "Orbiting Dots",
-  //   description: "Central dot with orbiting dots around it.",
-  //   categories: ["dots", "modern", "premium"],
+  {
+    id: "pulse-rings",
+    name: "Pulse Rings",
+    description: "Multiple concentric rings pulsing outward.",
+    categories: ["rings", "modern", "minimal"],
 
-  //   Loader: OrbitingDots,
-  //   Preview: OrbitingDotsPreview,
+    Loader: PulseRings,
+    Preview: PulseRingsPreview,
 
-  //   writeup: {
-  //     intro:
-  //       "Elegant loader featuring a central point with dots orbiting around it. Creates a sophisticated and premium loading experience.",
+    writeup: {
+      intro:
+        "Multiple expanding rings that pulse outward, creating a radar-like or breathing effect. Very smooth and calming.",
 
-  //     useCases: [
-  //       "Premium applications",
-  //       "AI tools",
-  //       "Creative portfolios",
-  //     ],
+      useCases: ["Scanning / searching", "Syncing", "Background activity"],
 
-  //     advantages: [
-  //       "Eye-catching and unique",
-  //       "Modern and futuristic feel",
-  //     ],
+      advantages: ["Beautiful and elegant", "Very smooth performance"],
 
-  //     limitations: [
-  //       "Slightly more complex animation",
-  //       "May not suit very minimal designs",
-  //     ],
-  //   },
+      limitations: ["Can be subtle on small screens"],
+    },
 
-  //   controls: {
-  //     size: true,
-  //     speed: true,
-  //     color: true,
-  //   },
-  // },
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
+  },
 
-  // {
-  //   id: "pulse-rings",
-  //   name: "Pulse Rings",
-  //   description: "Multiple concentric rings pulsing outward.",
-  //   categories: ["rings", "modern", "minimal"],
+  // Striped Bar is a dynamic progress bar with animated diagonal stripes that move continuously. It gives a strong sense of ongoing activity and is commonly used in modern interfaces. This loader is ideal for file uploads, data processing, and long-running tasks where you want to indicate that something is happening without showing exact progress. The moving stripes add visual interest and can be customized in terms of height, speed, and color to fit seamlessly into various design systems. However, it does not show exact percentage by default and can feel visually busy in very minimal designs.
+  {
+    id: "striped-bar",
+    name: "Striped Bar",
+    description: "Progress bar with moving diagonal stripes.",
+    categories: ["progress", "modern", "bars"],
 
-  //   Loader: PulseRings,
-  //   Preview: PulseRingsPreview,
+    Loader: StripedBar,
+    Preview: StripedBarPreview,
 
-  //   writeup: {
-  //     intro:
-  //       "Multiple expanding rings that pulse outward, creating a radar-like or breathing effect. Very smooth and calming.",
+    writeup: {
+      intro:
+        "A dynamic progress bar with animated diagonal stripes that move continuously. It gives a strong sense of ongoing activity and is commonly used in modern interfaces.",
 
-  //     useCases: [
-  //       "Scanning / searching",
-  //       "Syncing",
-  //       "Background activity",
-  //     ],
+      useCases: [
+        "File uploads",
+        "Data processing",
+        "Long-running tasks",
+        "Progress indicators",
+      ],
 
-  //     advantages: [
-  //       "Beautiful and elegant",
-  //       "Very smooth performance",
-  //     ],
+      advantages: [
+        "Visually engaging and modern",
+        "Clearly indicates activity",
+        "Familiar progress metaphor",
+      ],
 
-  //     limitations: ["Can be subtle on small screens"],
-  //   },
+      limitations: [
+        "Does not show exact percentage by default",
+        "Can be visually busy in very minimal designs",
+      ],
+    },
 
-  //   controls: {
-  //     size: true,
-  //     speed: true,
-  //     color: true,
-  //   },
-  // },
+    controls: {
+      height: true,
+      speed: true,
+      color: true,
+    },
+  },
 
-  // {
-  //   id: "linear-progress",
-  //   name: "Linear Progress",
-  //   description: "Smooth horizontal bar with shimmer effect.",
-  //   categories: ["progress", "modern", "minimal"],
+  // Typing Dots,
+  {
+    id: "typing-dots",
+    name: "Typing Dots",
+    description: "Animated typing indicator with dots and text.",
+    categories: ["dots", "chat", "minimal"],
 
-  //   Loader: LinearProgress,
-  //   Preview: LinearProgressPreview,
+    Loader: TypingDots,
+    Preview: TypingDotsPreview,
 
-  //   writeup: {
-  //     intro:
-  //       "A modern linear progress bar with a smooth shimmer animation. It gives users a clear sense of ongoing activity with a sleek, contemporary feel.",
+    writeup: {
+      intro:
+        "A realistic typing indicator that shows animated dots along with the word 'Loading'. Perfect for simulating real-time typing in chat interfaces.",
 
-  //     useCases: [
-  //       "File uploads",
-  //       "Page loading",
-  //       "Form submissions",
-  //       "Long-running processes",
-  //     ],
+      useCases: [
+        "Chat and messaging apps",
+        "AI assistants",
+        "Comment sections",
+        "Live support systems",
+      ],
 
-  //     advantages: [
-  //       "Shows continuous activity clearly",
-  //       "Familiar and intuitive",
-  //       "Highly customizable",
-  //     ],
+      advantages: [
+        "Highly familiar to users",
+        "Creates sense of live activity",
+        "Great for conversational UIs",
+      ],
 
-  //     limitations: [
-  //       "Does not show exact percentage unless enhanced",
-  //       "Can feel generic if overused",
-  //     ],
-  //   },
+      limitations: [
+        "Best suited for short waits",
+        "Not ideal for heavy background tasks",
+      ],
+    },
 
-  //   controls: {
-  //     height: true,
-  //     speed: true,
-  //     color: true,
-  //   },
-  // },
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
+  },
 
+  // Flip Card is a playful and visually engaging loader that features a 3D flipping card animation. It adds a unique and modern touch to loading states, making it ideal for creative portfolios, fun applications, game interfaces, and dashboard widgets. The animation demonstrates depth and 3D capability, creating an eye-catching effect. However, it may be slightly more performance heavy than simpler loaders and may not suit very professional or minimal UIs.
+  {
+    id: "flip-card",
+    name: "Flip Card",
+    description: "A 3D flipping card animation.",
+    categories: ["modern", "fun", "3d"],
+
+    Loader: FlipCard,
+    Preview: FlipCardPreview,
+
+    writeup: {
+      intro:
+        "A continuous 3D flipping card loader that rotates on the Y-axis. It adds a playful and modern touch to loading states.",
+
+      useCases: [
+        "Creative portfolios",
+        "Fun applications",
+        "Game interfaces",
+        "Dashboard widgets",
+      ],
+
+      advantages: [
+        "Eye-catching and unique",
+        "Demonstrates depth and 3D capability",
+        "Great visual appeal",
+      ],
+
+      limitations: [
+        "Slightly more performance heavy",
+        "May not suit very professional/minimal UIs",
+      ],
+    },
+
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
+  },
+
+  // Cube Spinner is a fully 3D rotating cube loader created with CSS 3D transforms. It adds depth and a modern, premium feel to loading states, making it ideal for creative websites, 3D-focused applications, modern dashboards, and portfolio projects. The impressive 3D visual effect can captivate users and enhance the perceived value of the application. However, it may be slightly heavier on performance than simpler loaders and may not suit ultra-minimal designs.
+  {
+    id: "cube-spinner",
+    name: "Cube Spinner",
+    description: "3D rotating cube loader.",
+    categories: ["3d", "modern", "premium"],
+
+    Loader: CubeSpinner,
+    Preview: CubeSpinnerPreview,
+
+    writeup: {
+      intro:
+        "A fully 3D rotating cube created with CSS 3D transforms. It adds depth and a modern, premium feel to loading states.",
+
+      useCases: [
+        "Creative websites",
+        "3D-focused applications",
+        "Modern dashboards",
+        "Portfolio projects",
+      ],
+
+      advantages: [
+        "Impressive 3D visual effect",
+        "No external dependencies",
+        "Highly customizable",
+      ],
+
+      limitations: [
+        "Slightly heavier on performance",
+        "May not suit ultra-minimal designs",
+      ],
+    },
+
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
+  },
+
+  // Gear Loader
+  {
+    id: "gear-loader",
+    name: "Gear Loader",
+    description: "Interlocking rotating gears.",
+    categories: ["mechanical", "modern", "premium"],
+
+    Loader: GearLoader,
+    Preview: GearLoaderPreview,
+
+    writeup: {
+      intro:
+        "Multiple interlocking gears rotating in opposite directions. This mechanical loader gives a technical, industrial, and premium feel to loading states.",
+
+      useCases: [
+        "Settings / Configuration",
+        "Processing heavy tasks",
+        "Engineering & technical tools",
+        "Dashboard loaders",
+      ],
+
+      advantages: [
+        "Unique and memorable",
+        "Conveys complex processing",
+        "Great visual depth",
+      ],
+
+      limitations: [
+        "Slightly more complex animation",
+        "May not suit very minimal UIs",
+      ],
+    },
+
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
+  },
+  // Hourglass Loader is a classic and elegant loading animation that features an hourglass with flowing sand. It conveys the passage of time in a visually appealing way, making it ideal for waiting screens, processing requests, elegant web applications, and classic design systems. The hourglass is a universally understood symbol for waiting, and its timeless design adds a touch of sophistication to any interface. However, it does not show exact progress and is best suited for medium to long waits.
+  {
+    id: "hourglass",
+    name: "Hourglass",
+    description: "Classic sand flowing hourglass animation.",
+    categories: ["classic", "elegant", "minimal"],
+
+    Loader: Hourglass,
+    Preview: HourglassPreview,
+
+    writeup: {
+      intro:
+        "A timeless hourglass loader with flowing sand animation. It elegantly represents the passage of time and is perfect for sophisticated interfaces.",
+
+      useCases: [
+        "Waiting screens",
+        "Processing requests",
+        "Elegant web applications",
+        "Classic design systems",
+      ],
+
+      advantages: [
+        "Universally understood symbol",
+        "Very elegant and timeless",
+        "Strong visual metaphor for time",
+      ],
+
+      limitations: [
+        "Does not show exact progress",
+        "Best for medium to long waits",
+      ],
+    },
+
+    controls: {
+      size: true,
+      speed: true,
+      color: true,
+    },
+  },
 ];

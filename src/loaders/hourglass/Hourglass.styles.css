@@ -1,0 +1,70 @@
+.hourglass {
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hourglass-frame {
+  position: relative;
+  width: 52%;
+  height: 88%;
+  border: 8px solid var(--color);
+  border-radius: 20px 20px 60px 60px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    inset 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.sand-upper,
+.sand-lower {
+  position: absolute;
+  left: 50%;
+  width: 28%;
+  background: linear-gradient(#fcd34d, #f59e0b);
+  box-shadow: 0 0 15px #fbbf24;
+  transition: height var(--speed) linear;
+}
+
+.sand-upper {
+  top: 12%;
+  height: 32%;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 0 0;
+  animation: sand-fall-upper var(--speed) linear infinite;
+}
+
+.sand-lower {
+  bottom: 12%;
+  height: 32%;
+  transform: translateX(-50%);
+  border-radius: 0 0 50% 50%;
+  animation: sand-fall-lower var(--speed) linear infinite;
+}
+
+@keyframes sand-fall-upper {
+  0%   { height: 32%; top: 12%; }
+  100% { height: 8%;  top: 36%; }
+}
+
+@keyframes sand-fall-lower {
+  0%   { height: 32%; }
+  100% { height: 56%; }
+}
+
+/* Center neck */
+.hourglass-frame::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 32px;
+  background: var(--color);
+  z-index: 2;
+  border-radius: 6px;
+}
